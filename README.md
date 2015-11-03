@@ -1,4 +1,4 @@
-# Training Scala
+# Learning Scala
 
 I'm learning Scala and functional programming with the resources:
 
