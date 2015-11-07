@@ -5,8 +5,6 @@ package exercises
  */
 object Lambda {
   def main(arg : Array[String]){
-    println("Hello world from Scala!");
-    
     println("An anonymous function can also take on a different look by taking out the brackets");
     
     def lambda = (x:Int) => x + 1;
