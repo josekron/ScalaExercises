@@ -5,11 +5,13 @@ package exercises
  */
 object PatternsMatchingExercises{
   
-  def matchTest1(x: Int): String = x match {
+  def main(arg : Array[String]){
+    
+     def matchTest1(x: Int): String = x match {
     case 1 => "one"
     case 2 => "two"
     case _ => "many"
-  }
+    }
   
   val name = "Paco";
   
@@ -33,19 +35,17 @@ object PatternsMatchingExercises{
     case x :: xs => xs.head
     case _ => 0
   }
-  
-  def main(arg : Array[String]){
     
-    println(PatternsMatchingExercises.matchTest1(4))
+    println(matchTest1(4))
     
-    println(PatternsMatchingExercises.matchTest2(("Jose","Málaga")))
-    println(PatternsMatchingExercises.matchTest2(("Antonio","wololo")))
-    println(PatternsMatchingExercises.matchTest2(("Marta","Paris")))
-    println(PatternsMatchingExercises.matchTest2(("Paco","Paris")))
+    println(matchTest2(("Jose","Málaga")))
+    println(matchTest2(("Antonio","wololo")))
+    println(matchTest2(("Marta","Paris")))
+    println(matchTest2(("Paco","Paris")))
     
-    println(PatternsMatchingExercises.matchTest3(2, 2))
-    println(PatternsMatchingExercises.matchTest3(2, 1))
+    println(matchTest3(2, 2))
+    println(matchTest3(2, 1))
     
-    println(PatternsMatchingExercises.matchTestSecondList)
+    println(matchTestSecondList)
   }
 }
