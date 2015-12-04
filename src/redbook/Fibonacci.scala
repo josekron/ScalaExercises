@@ -7,6 +7,7 @@ object Fibonacci {
   
   def fibonacci(n1: Int, n2: Int, l: Int):Int = {
     
+    @annotation.tailrec
     def go(n1:Int, n2: Int, l: Int):Int = {
       if(n2>l) n2
       else go(n2, n1+n2, l)
