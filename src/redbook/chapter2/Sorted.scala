@@ -1,4 +1,4 @@
-package redbook
+package redbook.chapter2
 
 /**
  * @author JoseAntonio
