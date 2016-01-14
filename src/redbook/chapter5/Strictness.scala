@@ -1,5 +1,6 @@
 package redbook.chapter5
 
+import scala.Stream.cons;
 /**
  * @author JoseAntonio
  */
@@ -10,6 +11,12 @@ object Strictness {
   def if2[A](cond: Boolean, onTrue: => A, onFalse: => A): A =
     if (cond) onTrue else onFalse
 
+  val ones: Stream[Int] = cons(1, ones)
+  
+  def from(n: Int): Stream[Int] = 
+      ones.take(n)
+  
+  
   def main(arg : Array[String]){
     
     //A strictness function evaluates all parameters o returns error. Example:    
@@ -35,5 +42,22 @@ object Strictness {
     lazy val y = { print ("foo") ; 10 }
     print ("bar")
     print (y)
+    
+    println("")
+    
+    //Infinite stream:
+    val res3 = ones.take(5).toList
+    println(res3)
+    
+    val res4 = ones.exists(_ % 2 != 0)
+    println(res4)
+    
+    val res5 = ones.map(_ + 1).exists(_ % 2 == 0)
+    println(res5)
+    
+    val res6 = ones.takeWhile(_ == 1)
+    println(res6)
+
+    println(from(4).toList)
   }
 }
