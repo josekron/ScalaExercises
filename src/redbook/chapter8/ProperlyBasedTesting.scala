@@ -8,7 +8,9 @@ import org.scalacheck.Prop.forAll
  */
 trait ProperlyBasedTesting {
   
-  trait Prop { def &&(p: Prop): Prop }
+  trait Prop { 
+    def check: Unit
+    def &&(p: Prop): Prop }
   
   def listOf[A](a: Gen[A]): Gen[List[A]]
   
